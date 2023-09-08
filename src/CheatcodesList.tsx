@@ -45,7 +45,7 @@ export const CheatcodesList = ({ cheatcodes }: { cheatcodes: Cheatcodes }) => {
       {Object.entries(cheatcodes).map(([funcName], i) => {
         return (
           <div
-            key={funcName + i}
+            key={`function-${funcName}-${i}`}
             className="py-2 border-b border-gray-400 flex flex-col gap-2"
           >
             <h1 className="font-bold text-white/40 uppercase text-xs">
@@ -53,10 +53,11 @@ export const CheatcodesList = ({ cheatcodes }: { cheatcodes: Cheatcodes }) => {
             </h1>{" "}
             <div className="grid grid-cols-[max-content,1fr] gap-x-4 gap-y-2">
               {(cheatcodes[funcName].params || []).map((param, index) => (
-                <div className="flex gap-3">
-                  <div key={param.name + index} className="text-amber-200/80">
-                    {param.name}
-                  </div>
+                <div
+                  key={`param-input-${param.name}-${index}`}
+                  className="flex gap-3"
+                >
+                  <div className="text-amber-200/80">{param.name}</div>
                   <div className="text-sm">
                     <input
                       type={getTypeInput(param.type)}

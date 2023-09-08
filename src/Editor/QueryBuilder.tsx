@@ -51,7 +51,6 @@ export const QueryBuilder = ({
 
   // If there is no filter present, view no entities.
   useEffect(() => {
-    console.log("hello");
     if (!entityQueryText) {
       resetFilteredEntities();
     }
