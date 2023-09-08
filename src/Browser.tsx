@@ -22,7 +22,7 @@ export const Browser = ({
   cheatcodes?: Cheatcodes;
   tabs?: { name: string; content: JSX.Element }[];
 }) => {
-  const [isVisible, setIsVisible] = useState<number>(0);
+  const [isVisible, setIsVisible] = useState<number>();
   const cheatcodesTab =
     cheatcodes && Object.keys(cheatcodes).length > 0
       ? [
@@ -65,7 +65,7 @@ export const Browser = ({
             </button>
           ))}
       </div>
-      <button className="px-4 py-1" onClick={() => setIsVisible(0)}>
+      <button className="px-4 py-1" onClick={() => setIsVisible(undefined)}>
         X
       </button>
     </div>

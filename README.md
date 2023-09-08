@@ -13,14 +13,15 @@
 ## Prerequisites
 
 - Node.js (>=14.0.0)
+- pnpm
 - MUD V2
 
 ## Installation
 
-1. Clone the repository:
+1. Install with npm or clone the repository:
 
    ```bash
-   git clone https://github.com/yourorg/mud-dev-tools.git
+   git clone https://github.com/primodiumxyz/mud-dev-tools.git
    ```
 
 2. Install dependencies:
@@ -37,10 +38,11 @@
 To integate the development browser, add the following to your file:
 
 ```jsx
+import { Browser } from "mud-game-tools";
 <Browser
   layers={{ react: { world, components: mud.components } }}
   world={world}
-/>
+/>;
 ```
 
 ### CheatcodesList
@@ -60,11 +62,12 @@ export type Cheatcode = {
 To use it, add the cheatcodes as a parameter to the Browser:
 
 ```jsx
+import { Browser } from "mud-game-tools";
 <Browser
   layers={{ react: { world, components: mud.components } }}
   world={world}
   cheatcodes={cheatcodes}
-/>
+/>;
 ```
 
 Access via the browser's `Cheatcodes` tab.
