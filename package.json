@@ -3,7 +3,7 @@
   "version": "1.0.4",
   "files": [
     "dist/",
-    "src/types.ts"
+    "src/"
   ],
   "description": "Tools for MUD Games",
   "license": "MIT",
