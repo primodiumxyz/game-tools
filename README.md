@@ -2,7 +2,7 @@
 
 ## Description
 
-`mud-dev-tools` is a developer utility package designed to assist in building Ethereum applications with the MUD framework. This package streamlines the development process by offering a browser and specialized tabs: CheatcodesList and Editor, to interact with the onchain game state.
+`mud-game-tools` is a developer utility package designed to assist in building Ethereum applications with the MUD framework. This package streamlines the development process by offering a browser and specialized tabs: CheatcodesList and Editor, to interact with the onchain game state.
 
 ## Features
 
