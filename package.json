@@ -1,11 +1,11 @@
 {
-  "name": "mud-game-tools",
+  "name": "@primodiumxyz/mud-game-tools",
   "version": "2.0.0-next.5",
   "description": "Tools for MUD Games",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/primodiumxyz/mud-game-tools"
+    "url": "git+https://github.com/primodiumxyz/mud-game-tools.git"
   },
   "type": "module",
   "exports": {
