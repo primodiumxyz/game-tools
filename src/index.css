@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+@layer utilities {
+  body {
+    cursor: url("/img/cursors/normal.png"), auto !important;
+  }
+
+  canvas {
+    cursor: url("/img/cursors/pointer.png") 12 0, auto;
+  }
+
+  canvas:active {
+    cursor: url("/img/cursors/pointerdown.png") 12 0, auto;
+  }
+
+  button {
+    cursor: url("/img/cursors/pointer.png") 12 0, auto;
+  }
+
+  button:active {
+    cursor: url("/img/cursors/pointerdown.png") 12 0, auto;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    @apply relative w-[.4rem];
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-slate-500;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-700;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+  }
+
+  canvas {
+    touch-action: none;
+    @apply h-full w-full;
+  }
+
+  .screen-container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .viewport-container {
+    margin-top: env(safe-area-inset-top);
+    margin-right: env(safe-area-inset-right);
+    /* margin-bottom: env(safe-area-inset-bottom); */
+    margin-left: env(safe-area-inset-left);
+  }
+
+  .sidebar-icon {
+    @apply bg-gray-700 w-12 h-12 mt-3 text-white shadow-xl rounded items-center relative flex justify-center hover:text-yellow-100 focus:text-yellow-300;
+  }
+
+  .sidebar-tooltip {
+    @apply bg-slate-50 z-[10000] scale-0 inline-block absolute w-auto p-3 m-3 min-w-max left-12 rounded shadow-xl text-gray-700 font-mono font-bold transition-none origin-left;
+  }
+
+  .building-tooltip {
+    @apply bg-slate-50 z-[10000] scale-0 inline-block absolute w-auto p-3 mt-3 mr-3 mb-3 ml-10 min-w-max rounded shadow-xl text-gray-700 font-mono font-bold;
+  }
+
+  .resource-tooltip {
+    @apply bg-slate-50 z-[10000] scale-0 inline-block absolute w-auto p-2 mb-3 ml-3 min-w-max rounded shadow-xl text-gray-700 font-mono text-sm font-bold;
+  }
+
+  .pixel-images {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+  /* .react-flow__connection-path {
+    @apply bg-white z-[1000] viewport-container text-white
+  } */
+
+  .map-container {
+    background-color: rgb(100 116 139);
+  }
+
+  /* remove outline on waltour tooltip containers */
+  #walktour-tooltip-container[tabindex] {
+    @apply focus:outline-none;
+  }
+}
