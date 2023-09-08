@@ -2,7 +2,6 @@ import { Layers, Schema, World } from "@latticexyz/recs";
 import { Fragment, useState } from "react";
 import { CheatcodesList } from "./CheatcodesList";
 import { Editor } from "./Editor";
-import { BrowserContainer } from "./StyledComponents";
 import { Cheatcodes, SetContractComponentFunction } from "./types";
 
 /**
@@ -23,7 +22,7 @@ export const Browser = ({
   cheatcodes?: Cheatcodes;
   tabs?: { name: string; content: JSX.Element }[];
 }) => {
-  const [isVisible, setIsVisible] = useState<number>();
+  const [isVisible, setIsVisible] = useState<number>(0);
   const cheatcodesTab =
     cheatcodes && Object.keys(cheatcodes).length > 0
       ? [
@@ -49,7 +48,7 @@ export const Browser = ({
     : [];
   tabs = [...cheatcodesTab, ...editorTab, ...tabs];
   const TopBar = () => (
-    <div className="flex justify-between bg-gray-400 p-2">
+    <div className="flex justify-between bg-slate-900 p-2 text-xs">
       <div className="flex gap-1">
         {tabs.length > 0 &&
           tabs.map(({ name }, i) => (
@@ -66,27 +65,17 @@ export const Browser = ({
             </button>
           ))}
       </div>
-      <button className="px-4 py-2" onClick={() => setIsVisible(undefined)}>
+      <button className="px-4 py-1" onClick={() => setIsVisible(0)}>
         X
       </button>
     </div>
   );
 
   return (
-    <BrowserContainer
-      style={{
-        zIndex: 1002,
-        position: "fixed",
-        bottom: 0,
-        right: 0,
-        width: isVisible !== undefined ? "24rem" : 0,
-        height: "100vh",
-        fontSize: "10pt",
-        display: "flex",
-        flexDirection: "column",
-        background: "dark-gray",
-        color: "white",
-      }}
+    <div
+      className={`${
+        isVisible !== undefined ? "w-96" : "w-0"
+      } overflow-auto bg-[rgba(17,24,39,1)] text-[#8C91A0] h-full z-[999999] fixed bottom-0 right-0 h-screen text-size-1 flex flex-col bg-slate-800 text-white`}
     >
       {isVisible !== undefined && <TopBar />}
       {tabs.map(({ content }, i) =>
@@ -112,6 +101,6 @@ export const Browser = ({
           Show Browser
         </button>
       )}
-    </BrowserContainer>
+    </div>
   );
 };
