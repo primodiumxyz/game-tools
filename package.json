@@ -1,9 +1,9 @@
 {
   "name": "@primodiumxyz/mud-game-tools",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "files": [
     "dist/",
-    "src/"
+    "src/types.ts"
   ],
   "description": "Tools for MUD Games",
   "license": "MIT",
