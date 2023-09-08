@@ -47,8 +47,8 @@ To add the Cheatcodes list to the browser, create a Cheatcodes object with the f
 ```jsx
 export type Cheatcodes = Record<string, Cheatcode>;
 
+// NOTE: the params field must match the names and types of function arguments
 export type Cheatcode = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function: (...args: any[]) => any;
   params: { name: string; type: "number" | "string" | "boolean" }[];
 };
