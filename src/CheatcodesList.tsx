@@ -41,38 +41,47 @@ export const CheatcodesList = ({ cheatcodes }: { cheatcodes: Cheatcodes }) => {
   };
 
   return (
-    <div className="overflow-auto p-6 bg-gray-900 text-gray-400 h-full pointer-events-auto">
+    <div className="overflow-auto p-6 bg-slate-800 text-gray-400 h-full pointer-events-auto">
       {Object.entries(cheatcodes).map(([funcName], i) => {
         return (
-          <div key={funcName + i} className="py-2 border-b border-gray-400">
-            <div className="text-white font-bold text-sm mb-2 flex flex-row items-center justify-between">
+          <div
+            key={funcName + i}
+            className="py-2 border-b border-gray-400 flex flex-col gap-2"
+          >
+            <h1 className="font-bold text-white/40 uppercase text-xs">
               {funcName}
+            </h1>{" "}
+            <div className="grid grid-cols-[max-content,1fr] gap-x-4 gap-y-2">
+              {(cheatcodes[funcName].params || []).map((param, index) => (
+                <div className="flex gap-3">
+                  <div key={param.name + index} className="text-amber-200/80">
+                    {param.name}
+                  </div>
+                  <div className="text-sm">
+                    <input
+                      type={getTypeInput(param.type)}
+                      placeholder={param.name}
+                      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                      // @ts-ignore
+                      value={params[funcName]?.[param.name] ?? ""}
+                      onChange={(e) =>
+                        handleParamChange(
+                          funcName,
+                          param.name,
+                          e.target.type === "checkbox"
+                            ? e.target.checked
+                            : e.target.value
+                        )
+                      }
+                      className="border rounded-sm p-1 text-xs focus:outline-none focus:ring bg-gray-100 focus:border-blue-300 text-gray-800"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-            {(cheatcodes[funcName].params || []).map((param, index) => (
-              <div key={param.name + index} className="mb-2 flex items-center">
-                <p className="mr-2">{param.name}</p>
-                <input
-                  type={getTypeInput(param.type)}
-                  placeholder={param.name}
-                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                  // @ts-ignore
-                  value={params[funcName]?.[param.name] ?? ""}
-                  onChange={(e) =>
-                    handleParamChange(
-                      funcName,
-                      param.name,
-                      e.target.type === "checkbox"
-                        ? e.target.checked
-                        : e.target.value
-                    )
-                  }
-                  className="border rounded py-1 px-2 focus:outline-none focus:ring focus:border-blue-300 text-gray-800"
-                />
-              </div>
-            ))}
             <button
               onClick={() => executeFunction(funcName)}
-              className="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+              className="border-blue-300 bg-blue-500 text-white py-1 rounded-sm focus:outline-none focus:ring focus:border-blue-100"
             >
               Submit
             </button>

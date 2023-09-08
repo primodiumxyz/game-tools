@@ -25,7 +25,7 @@ export const Editor = ({
   }, [world]);
 
   return (
-    <BrowserContainer>
+    <BrowserContainer className="text-xs">
       <QueryBuilder
         allEntities={[...entities]}
         setFilteredEntities={setFilteredEntities}
