@@ -1,4 +1,4 @@
-import { Layers, Schema, World } from "@latticexyz/recs";
+import { Layers, Schema, World } from "@latticexyz/recs/src/types";
 import { Fragment, useState } from "react";
 import { CheatcodesList } from "./CheatcodesList";
 import { Editor } from "./Editor";

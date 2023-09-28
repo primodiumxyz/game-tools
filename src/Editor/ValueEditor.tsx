@@ -41,7 +41,7 @@ export const ValueEditor = ({
   );
 
   useEffect(() => {
-    const v = componentValue[valueProp];
+    const v = componentValue[valueProp]?.toString();
     setValue(v as string | null);
   }, [componentValue, valueProp]);
 
