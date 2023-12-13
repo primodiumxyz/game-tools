@@ -25,12 +25,12 @@
     "test": "tsc --noEmit"
   },
   "dependencies": {
-    "@latticexyz/protocol-parser": "2.0.0-main-3e057061",
-    "@latticexyz/react": "2.0.0-main-3e057061",
-    "@latticexyz/recs": "2.0.0-main-3e057061",
-    "@latticexyz/schema-type": "2.0.0-main-3e057061",
-    "@latticexyz/store-sync": "2.0.0-main-3e057061",
-    "@latticexyz/utils": "2.0.0-main-3e057061",
+    "@latticexyz/protocol-parser": "2.0.0-main-735d957c",
+    "@latticexyz/react": "2.0.0-main-735d957c",
+    "@latticexyz/recs": "2.0.0-main-735d957c",
+    "@latticexyz/schema-type": "2.0.0-main-735d957c",
+    "@latticexyz/store-sync": "2.0.0-main-735d957c",
+    "@latticexyz/utils": "2.0.0-main-735d957c",
     "goober": "^2.1.13",
     "lodash": "^4.17.21",
     "react": "^18.2.0"
