@@ -75,7 +75,7 @@ export const BrowserContainer = styled("div")`
   word-wrap: break-word;
   width: 100%;
   overflow: auto;
-  background-color: rgba(17, 24, 39, 1);
+  background: rgba(0, 0, 0, 0.2);
   color: #8c91a0;
   height: 100%;
   pointer-events: all;

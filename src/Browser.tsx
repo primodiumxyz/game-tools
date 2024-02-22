@@ -54,6 +54,7 @@ export const Browser = ({
           tabs.map(({ name }, i) => (
             <button
               style={{
+                borderRadius: "4px",
                 paddingInline: 8,
                 background: isVisible === i ? "royalblue" : "darkgray",
                 opacity: isVisible === i ? "1" : ".5",
