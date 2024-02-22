@@ -39,26 +39,41 @@ export const CheatcodesList = ({ cheatcodes }: { cheatcodes: Cheatcodes }) => {
         return "text";
     }
   };
+  function camelCaseToCapitalized(str: string): string {
+    return (
+      str
+        // Insert a space before all caps
+        .replace(/([A-Z])/g, " $1")
+        // Replace first char with uppercase and trim spaces
+        .replace(/^./, (match) => match.toUpperCase())
+        .trim()
+    );
+  }
 
   return (
-    <div className="overflow-auto p-6 bg-slate-800 text-gray-400 h-full pointer-events-auto">
+    <div
+      className="overflow-auto px-4 py-2 bg-black-800/50 text-gray-400 h-full pointer-events-auto"
+      style={{ background: "rgba(0,0,0,0.2)" }}
+    >
       {Object.entries(cheatcodes).map(([funcName], i) => {
         return (
           <div
             key={`function-${funcName}-${i}`}
             className="py-2 border-b border-gray-400 flex flex-col gap-2"
           >
-            <h1 className="font-bold text-white/40 uppercase text-xs">
-              {funcName}
+            <h1 className="text-white opacity-90 font-bold text-sm">
+              {camelCaseToCapitalized(funcName)}
             </h1>{" "}
-            <div className="grid grid-cols-[max-content,1fr] gap-x-4 gap-y-2">
-              {(cheatcodes[funcName].params || []).map((param, index) => (
-                <div
-                  key={`param-input-${param.name}-${index}`}
-                  className="flex gap-3"
-                >
-                  <div className="text-amber-200/80">{param.name}</div>
-                  <div className="text-sm">
+            {cheatcodes[funcName].params.length > 0 && (
+              <div className="grid grid-cols-[max-content,1fr] gap-2">
+                {(cheatcodes[funcName].params || []).map((param, index) => (
+                  <div
+                    key={`param-input-${param.name}-${index}`}
+                    className="flex gap-3 items-center"
+                  >
+                    <div className="text-white opacity-80">
+                      {camelCaseToCapitalized(param.name)}
+                    </div>
                     <input
                       type={getTypeInput(param.type)}
                       placeholder={param.name}
@@ -74,17 +89,17 @@ export const CheatcodesList = ({ cheatcodes }: { cheatcodes: Cheatcodes }) => {
                             : e.target.value
                         )
                       }
-                      className="border rounded-sm p-1 text-xs focus:outline-none focus:ring bg-gray-100 focus:border-blue-300 text-gray-800"
+                      className="border rounded-sm p-1 w-full text-xs bg-slate-200"
                     />
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
             <button
               onClick={() => executeFunction(funcName)}
-              className="border-blue-300 bg-blue-500 text-white py-1 rounded-sm focus:outline-none focus:ring focus:border-blue-100"
+              className="bg-slate-600 text-white py-1 rounded-sm focus:outline-none focus:ring focus:border-blue-100"
             >
-              Submit
+              Run
             </button>
           </div>
         );

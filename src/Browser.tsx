@@ -1,4 +1,4 @@
-import { Layers, Schema, World } from "@latticexyz/recs/src/types";
+import { Layers, Schema, World } from "@latticexyz/recs";
 import { Fragment, useState } from "react";
 import { CheatcodesList } from "./CheatcodesList";
 import { Editor } from "./Editor";
@@ -48,7 +48,7 @@ export const Browser = ({
     : [];
   tabs = [...cheatcodesTab, ...editorTab, ...tabs];
   const TopBar = () => (
-    <div className="flex justify-between bg-slate-900 p-2 text-xs">
+    <div className="flex justify-between w-full bg-slate-900 p-2 text-xs">
       <div className="flex gap-1">
         {tabs.length > 0 &&
           tabs.map(({ name }, i) => (
@@ -75,7 +75,7 @@ export const Browser = ({
     <div
       className={`${
         isVisible !== undefined ? "w-96" : "w-0"
-      } overflow-auto bg-[rgba(17,24,39,1)] text-[#8C91A0] h-full z-[999999] fixed bottom-0 right-0 h-screen text-size-1 flex flex-col bg-slate-800 text-white`}
+      } overflow-auto bg-[rgba(17,24,39,1)] text-[#8C91A0] h-full z-[999999] fixed bottom-0 right-0 h-screen text-size-1 flex flex-col justify-center items-center bg-slate-800 text-white`}
     >
       {isVisible !== undefined && <TopBar />}
       {tabs.map(({ content }, i) =>
