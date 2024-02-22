@@ -191,7 +191,10 @@ export const QueryBuilder = ({
         <h3>Filter by Component</h3>
         <QueryShortcutContainer style={{ margin: "8px auto" }}>
           {orderBy(allComponents, (c) => c.id)
-            .filter((c) => !c.id.includes("-"))
+            .filter(
+              (c) =>
+                !((c.metadata?.componentName as string) ?? c.id)?.includes("-")
+            )
             .map((component) => {
               const filterActive = componentFilters.includes(component);
 

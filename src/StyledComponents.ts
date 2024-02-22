@@ -72,6 +72,8 @@ export const EntityEditorContainer = styled("div")`
 `;
 
 export const BrowserContainer = styled("div")`
+  word-wrap: break-word;
+  width: 100%;
   overflow: auto;
   background-color: rgba(17, 24, 39, 1);
   color: #8c91a0;

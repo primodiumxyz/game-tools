@@ -39,13 +39,7 @@ export const EntityEditor = ({
   return (
     <EntityEditorContainer>
       <div onClick={() => setOpened(!opened)} style={{ cursor: "pointer" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
+        <div>
           <h3 style={{ color: "white" }}>Entity {entityId}</h3>
           <ComponentBrowserButton
             onClick={(e: { stopPropagation: () => void }) => {
@@ -53,7 +47,7 @@ export const EntityEditor = ({
               navigator.clipboard.writeText(entityId);
             }}
           >
-            Click to copy Entity ID
+            Copy
           </ComponentBrowserButton>
         </div>
         <ComponentBrowserButton onClick={() => setOpened(!opened)}>
