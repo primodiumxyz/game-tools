@@ -1,8 +1,8 @@
-# mud-game-tools
+# Primodium Game Tools
 
 ## Description
 
-`mud-game-tools` is a developer utility package designed to assist in building Ethereum applications with the MUD framework. This package streamlines the development process by offering a browser and specialized tabs: CheatcodesList and Editor, to interact with the onchain game state.
+`@primodiumxyz/mud-game-tools` is a developer utility package designed to assist in building Ethereum applications with the MUD framework. This package streamlines the development process by offering a browser and specialized tabs: CheatcodesList and Editor, to interact with the onchain game state.
 
 ## Features
 
@@ -18,24 +18,17 @@
 
 ## Installation
 
-1. Install with npm or clone the repository:
+Install with npm:
 
-   ```bash
-   git clone https://github.com/primodiumxyz/mud-dev-tools.git
-   ```
-
-2. Install dependencies:
-   ```bash
-   cd mud-dev-tools
-   pnpm install
-   pnpm build
-   ```
+```bash
+npm install @primodiumxyz/mud-game-tools
+```
 
 ## Usage
 
 ### Browser
 
-To integate the development browser, add the following to your file:
+To integrate the development browser, add the following to your file:
 
 ```jsx
 import { Browser } from "mud-game-tools";
@@ -90,6 +83,15 @@ Access via the browser's `Editor` tab. This allows you to:
 ## Contributions
 
 Pull requests and issues are welcome.
+
+To develop this package locally, clone the repository and install dependencies.
+
+```bash
+git clone https://github.com/primodiumxyz/mud-dev-tools.git
+cd mud-dev-tools
+pnpm install
+pnpm build
+```
 
 ## License
 
