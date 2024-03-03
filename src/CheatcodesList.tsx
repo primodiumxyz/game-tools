@@ -89,7 +89,7 @@ export const CheatcodesList = ({ cheatcodes }: { cheatcodes: Cheatcodes }) => {
                             : e.target.value
                         )
                       }
-                      className="border rounded-sm p-1 w-full text-xs bg-slate-200"
+                      className="border rounded-sm p-1 w-full text-xs text-black bg-slate-200"
                     />
                   </div>
                 ))}
