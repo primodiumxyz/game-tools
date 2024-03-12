@@ -101,7 +101,7 @@ export const CheatcodesList = ({
 
   return (
     <div
-      className={`flex flex-col overflow-hidden pointer-events-auto ${className}`}
+      className={`flex flex-col w-full h-full overflow-hidden pointer-events-auto ${className}`}
     >
       <div className="flex justify-around w-full">
         <input
@@ -167,10 +167,11 @@ export const CheatcodesList = ({
                                   </div>
                                   {param.type === "dropdown" ? (
                                     <select
+                                      placeholder="Select an option"
                                       value={
                                         params
                                           ? params[funcName]?.[param.name] ?? ""
-                                          : ""
+                                          : param.dropdownOptions[0]
                                       }
                                       onChange={(e) =>
                                         handleParamChange(
@@ -181,6 +182,10 @@ export const CheatcodesList = ({
                                       }
                                       className="border rounded-sm p-1 w-full text-xs bg-slate-500"
                                     >
+                                      {" "}
+                                      <option value="" disabled hidden>
+                                        Select an option
+                                      </option>
                                       {param.dropdownOptions?.map(
                                         (option, optionIndex) => (
                                           <option
