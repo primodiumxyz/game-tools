@@ -67,7 +67,6 @@ export const CheatcodesList = ({
       ),
     [flatCheatcodes, search]
   );
-  console.log(filteredCheatcodes);
 
   const executeFunction = (funcName: string) => {
     const func = flatCheatcodes[funcName].function;
