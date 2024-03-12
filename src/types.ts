@@ -33,5 +33,8 @@ export type Cheatcodes = Record<string, Cheatcode>;
 export type Cheatcode = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function: (...args: any[]) => any;
-  params: { name: string; type: "number" | "string" | "boolean" }[];
+  params: {
+    name: string;
+    type: "number" | "string" | "boolean" | "dropdown";
+  }[];
 };
