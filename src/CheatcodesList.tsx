@@ -72,7 +72,9 @@ export const CheatcodesList = ({
     const func = flatCheatcodes[funcName].function;
     if (func) {
       const funcParams = params[funcName] || {};
-      const args = Object.values(funcParams);
+      const args = flatCheatcodes[funcName].params.map((param) => {
+        return funcParams[param.name];
+      });
       func(...args);
     }
   };
@@ -169,7 +171,9 @@ export const CheatcodesList = ({
                                       placeholder="Select an option"
                                       value={
                                         params
-                                          ? params[funcName]?.[param.name] ?? ""
+                                          ? (params[funcName]?.[
+                                              param.name
+                                            ] as string) ?? ""
                                           : param.dropdownOptions[0]
                                       }
                                       onChange={(e) =>
@@ -202,7 +206,9 @@ export const CheatcodesList = ({
                                       placeholder={param.type}
                                       value={
                                         params
-                                          ? params[funcName]?.[param.name] ?? ""
+                                          ? (params[funcName]?.[
+                                              param.name
+                                            ] as string) ?? ""
                                           : ""
                                       }
                                       onChange={(e) =>
