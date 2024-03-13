@@ -33,22 +33,6 @@
     cursor: url("/img/cursors/pointerdown.png") 12 0, auto;
   }
 
-  .scrollbar::-webkit-scrollbar {
-    @apply relative w-[.4rem];
-  }
-
-  .scrollbar::-webkit-scrollbar-track {
-    @apply bg-slate-500;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-slate-700;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #4b5563;
-  }
-
   canvas {
     touch-action: none;
     @apply h-full w-full;
@@ -57,6 +41,21 @@
   .screen-container {
     width: 100vw;
     height: 100vh;
+  }
+  .scrollbar::-webkit-scrollbar {
+    @apply relative w-[.4rem];
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-slate-700 rounded-box;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-500 rounded-box;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
   }
 
   .viewport-container {
